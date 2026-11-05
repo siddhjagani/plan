@@ -3,12 +3,13 @@
 A responsive, static website proposal for a company getaway to Pawna Lake. It includes:
 
 - The three-day / two-night trip concept and itinerary
+- A split-screen Villa Stay vs Lakeside Camping comparison with a black/yellow divider
 - A researched villa shortlist with official property links and images
-- A team villa-preference poll
+- A team stay-preference poll covering each named villa and the lakeside tent-camping option
 - The Bhayandar → Dadar Western → Dadar Central → Lonavala → Pawna route
 - Activity ideas, food planning, logistics and safety notes
 
-The public website intentionally contains no calendar dates or monetary amounts.
+The public website intentionally contains no calendar dates or monetary amounts. The campsite is a proposed stay style, not a selected or confirmed campsite; confirm tent capacity, bedding, washrooms, security, meals and the ability to accommodate the group for both nights before choosing an operator.
 
 ## Run locally
 
@@ -24,11 +25,11 @@ Without Supabase credentials, voting runs in **preview mode** and is saved only 
 
 ## Enable shared team voting with Supabase
 
-The poll uses Supabase so that votes are shared across visitors and devices. Voters enter a display name and select a named villa option. A browser-generated voter key lets a person update their vote from the same browser. This is a lightweight preference poll, not verified employee authentication; clearing browser storage or using another browser/device can create another voter key.
+The poll uses Supabase so that votes are shared across visitors and devices. Voters enter a display name and select either a named villa or the Lakeside Tent Camping option. Results show the overall Villa vs Camping preference as well as the detailed villa/camping choice breakdown. A browser-generated voter key lets a person update their vote from the same browser. This is a lightweight preference poll, not verified employee authentication; clearing browser storage or using another browser/device can create another voter key.
 
 1. Create a Supabase project.
 2. Open **SQL Editor** in the Supabase dashboard.
-3. Run the SQL in `supabase/voting.sql`.
+3. Run the full SQL in `supabase/voting.sql`. If you previously configured the villa-only poll, run this updated SQL again; it updates the allowed choices to include `pawna-camping` while preserving existing votes.
 4. Open **Project Settings → API** (or API Keys) and copy the Project URL and public anon/publishable key.
 5. In Coolify, add these runtime environment variables to the application:
    - `SUPABASE_URL` = your Supabase Project URL
@@ -56,4 +57,3 @@ The included `nginx.conf` serves the static site and `/healthz` health endpoint.
 - Photos are loaded from the respective property websites and other image hosts, so the deployed website needs outbound internet access. Check image usage/permissions with the property operators before using the website publicly.
 - Villa availability, exact layouts, guest capacity, lake access and inclusions must be reconfirmed with each property before selection.
 - The train section intentionally does not display train times. After travel days are decided, verify a Central Railway intercity/express service that stops at Lonavala through IRCTC/NTES. The Dadar → Lonavala leg is not described as a normal suburban Central Line local.
-# plan

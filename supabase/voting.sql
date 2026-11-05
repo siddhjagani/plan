@@ -1,4 +1,4 @@
--- Pawna Escape: shared villa preference poll
+-- Pawna Escape: shared villa-or-camping preference poll
 -- Run this once in Supabase Dashboard -> SQL Editor.
 -- The browser can submit votes and read aggregate counts only.
 -- Voter names are not exposed by the public results function.
@@ -14,6 +14,19 @@ create table if not exists public.pawna_villa_votes (
   )),
   updated_at timestamptz not null default now()
 );
+
+-- Rebuild the allowed-choice constraint so existing projects can add the camping option.
+alter table public.pawna_villa_votes
+  drop constraint if exists pawna_villa_votes_villa_id_check;
+alter table public.pawna_villa_votes
+  add constraint pawna_villa_votes_villa_id_check
+  check (villa_id in (
+    'kino-lakeside',
+    'atlantis-4bhk',
+    'sierra-vista',
+    'lake-sanctuary',
+    'pawna-camping'
+  ));
 
 alter table public.pawna_villa_votes enable row level security;
 revoke all on table public.pawna_villa_votes from anon, authenticated;
@@ -43,9 +56,10 @@ begin
     'kino-lakeside',
     'atlantis-4bhk',
     'sierra-vista',
-    'lake-sanctuary'
+    'lake-sanctuary',
+    'pawna-camping'
   ) then
-    raise exception 'Choose a villa from the shortlist';
+    raise exception 'Choose a stay option from the shortlist';
   end if;
 
   insert into public.pawna_villa_votes (voter_key, voter_name, villa_id, updated_at)
