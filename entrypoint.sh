@@ -10,7 +10,7 @@ json_escape() {
 SUPABASE_URL_ESCAPED="$(json_escape "${SUPABASE_URL:-}")"
 SUPABASE_ANON_KEY_ESCAPED="$(json_escape "${SUPABASE_ANON_KEY:-}")"
 
-cat > /usr/share/nginx/html/config.js <<CONFIG
+cat > /usr/share/nginx/html/api/config.js <<CONFIG
 window.PAWNA_CONFIG = {
   supabaseUrl: "${SUPABASE_URL_ESCAPED}",
   supabaseAnonKey: "${SUPABASE_ANON_KEY_ESCAPED}"

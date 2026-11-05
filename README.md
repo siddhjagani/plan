@@ -1,59 +1,61 @@
 # Pawna Escape — Company Team Getaway
 
-A responsive, static website proposal for a company getaway to Pawna Lake. It includes:
+A responsive static website for the company Pawna Lake getaway. It includes:
 
-- The three-day / two-night trip concept and itinerary
 - A split-screen Villa Stay vs Lakeside Camping comparison with a black/yellow divider
-- A researched villa shortlist with official property links and images
-- A team stay-preference poll covering each named villa and the lakeside tent-camping option
+- A shortlist of named villa options and official property links
+- The full three-day / two-night experience and itinerary
 - The Bhayandar → Dadar Western → Dadar Central → Lonavala → Pawna route
-- Activity ideas, food planning, logistics and safety notes
+- A shared team poll for Villa vs Camping and individual villa preferences
+- Activity ideas, meals, logistics and safety notes
 
-The public website intentionally contains no calendar dates or monetary amounts. The campsite is a proposed stay style, not a selected or confirmed campsite; confirm tent capacity, bedding, washrooms, security, meals and the ability to accommodate the group for both nights before choosing an operator.
+The public website intentionally contains no calendar dates or monetary amounts.
 
-## Run locally
+## Deploy on Vercel (recommended)
 
-Open `index.html` in a browser, or run a simple static server:
+This project uses a tiny Vercel Function at `api/config.js` to read the Supabase browser-safe credentials at runtime. You do **not** need a custom build command or a generated `config.js` file.
 
-```bash
-python3 -m http.server 8080
-```
+1. Push the contents of this project folder to the connected GitHub repository. Make sure `api/config.js` is at the repository root inside the `api` folder, alongside `index.html`.
+2. In Vercel → Project → Settings → Environment Variables, add:
+   - `SUPABASE_URL` = your Supabase Project URL (usually `https://<project-ref>.supabase.co`)
+   - `SUPABASE_ANON_KEY` = your Supabase publishable key (`sb_publishable_...`) or legacy anon key.
+3. Enable the variables for **Production** and **Preview** (or all environments).
+4. In Vercel → Project → Settings → Build and Deployment, use **Other** as Framework Preset, leave Build Command empty, and use `.` as Output Directory (or leave the default root output). Remove any old custom build command that writes `config.js`.
+5. Save the settings and trigger a new deployment after saving the environment variables. Vercel applies changed variables to new deployments, not already-created deployments.
+6. Test `https://YOUR-DOMAIN/api/config.js`. It should return a `window.PAWNA_CONFIG` object with a non-empty `supabaseUrl` and `supabaseAnonKey`. Do not paste the returned key into public chats; it is a public browser key, but still belongs to your project.
+7. Open the website. The voting status should display **Shared team voting**. Test by submitting a vote and opening the site in another browser/device.
 
-Then open `http://localhost:8080`.
-
-Without Supabase credentials, voting runs in **preview mode** and is saved only in that browser. It is not shared with other visitors.
-
-## Enable shared team voting with Supabase
-
-The poll uses Supabase so that votes are shared across visitors and devices. Voters enter a display name and select either a named villa or the Lakeside Tent Camping option. Results show the overall Villa vs Camping preference as well as the detailed villa/camping choice breakdown. A browser-generated voter key lets a person update their vote from the same browser. This is a lightweight preference poll, not verified employee authentication; clearing browser storage or using another browser/device can create another voter key.
+### Supabase setup
 
 1. Create a Supabase project.
-2. Open **SQL Editor** in the Supabase dashboard.
-3. Run the full SQL in `supabase/voting.sql`. If you previously configured the villa-only poll, run this updated SQL again; it updates the allowed choices to include `pawna-camping` while preserving existing votes.
-4. Open **Project Settings → API** (or API Keys) and copy the Project URL and public anon/publishable key.
-5. In Coolify, add these runtime environment variables to the application:
-   - `SUPABASE_URL` = your Supabase Project URL
-   - `SUPABASE_ANON_KEY` = your public anon/publishable key
-6. Redeploy the application. The poll status should change from **Preview mode** to **Shared team voting**.
+2. In Supabase → SQL Editor, run the full contents of `supabase/voting.sql`. This version includes the `pawna-camping` choice.
+3. Copy the Project URL and the public publishable/anon key into Vercel as described above.
 
-Only use the public anon/publishable key in the website. **Never** put the Supabase `service_role` or secret key in browser code or Coolify environment variables for this frontend. The SQL exposes only aggregate counts and a vote-submission function; direct table access is revoked and row-level security is enabled.
+Only expose the publishable/anon key. **Never** use the Supabase `service_role` or secret key in browser code or in this config endpoint. The SQL keeps the vote table private and exposes only aggregate counts and vote-submission functions.
 
-## Deploy on Coolify with Dockerfile
+### Troubleshooting
 
-1. Push this project folder to a GitHub repository.
-2. In Coolify, choose **New Resource → Application**, then connect the repository.
-3. Select the branch you want to deploy.
-4. Choose the **Dockerfile** build pack (not a static/Nixpacks build).
-5. Set the Dockerfile path to `/Dockerfile` if Coolify asks for it.
-6. Set the exposed/container port to `80`.
-7. Add the Supabase environment variables described above. If you have not configured Supabase yet, you can omit them; the website will still load in preview voting mode.
-8. Add your domain in the Domains section, using the HTTP scheme/port expected by your Coolify proxy (normally the app container listens on port `80`).
-9. Save and deploy. Once the deployment is healthy, open the generated domain and test the villa cards, mobile navigation, train route links and poll.
+- If `/api/config.js` returns empty strings, the Vercel environment variables are missing from the deployment's environment scope, have incorrect names, or the project has not been redeployed since they were added.
+- If the endpoint returns populated values but the page still says Preview mode, open browser DevTools → Console and Network and check whether the Supabase JS CDN script or `/api/config.js` failed to load.
+- If the page says Shared team voting but shows a Supabase/RPC error, run `supabase/voting.sql` in the correct Supabase project and confirm the Vercel URL/key belong to that same project.
+- Votes made earlier in Preview mode are stored only in that browser and will not migrate to Supabase. Submit the preference again after Shared team voting is active.
 
-The included `nginx.conf` serves the static site and `/healthz` health endpoint. `entrypoint.sh` writes `/config.js` at container startup from Coolify's runtime environment variables, so Supabase credentials do not need to be baked into the image.
+## Deploy on Coolify with Docker
+
+The same browser path `/api/config.js` is served by Nginx in the Docker image.
+
+1. Push this folder to GitHub and create an Application in Coolify using the Dockerfile build pack.
+2. Expose container port `80`.
+3. Add `SUPABASE_URL` and `SUPABASE_ANON_KEY` as runtime environment variables.
+4. Deploy. The container entrypoint writes `/api/config.js` from those environment variables before Nginx starts.
+5. Test `/api/config.js` on the deployed domain and confirm the website reports Shared team voting.
+
+## Local preview
+
+Open `index.html` or run `python3 -m http.server 8080`. Without the Vercel Function or Docker-generated `/api/config.js`, the local page intentionally falls back to browser-only preview voting.
 
 ## Notes
 
-- Photos are loaded from the respective property websites and other image hosts, so the deployed website needs outbound internet access. Check image usage/permissions with the property operators before using the website publicly.
-- Villa availability, exact layouts, guest capacity, lake access and inclusions must be reconfirmed with each property before selection.
-- The train section intentionally does not display train times. After travel days are decided, verify a Central Railway intercity/express service that stops at Lonavala through IRCTC/NTES. The Dadar → Lonavala leg is not described as a normal suburban Central Line local.
+- Photos are loaded from external property and activity websites, so visitors need internet access. Confirm image usage rights before public/commercial use.
+- Villa capacity, room layout, lake access, campsite availability and inclusions must be reconfirmed with the property/operator before selection.
+- The train section intentionally avoids train times. Verify the service, operating day, Dadar stop and Lonavala arrival on IRCTC/NTES after travel dates are chosen.
