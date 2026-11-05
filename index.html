@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b32">
+  <meta name="description" content="A considered company getaway to Pawna Lake: a private lakeside villa, slow mornings, outdoor adventures, team moments and mountain sunsets.">
+  <title>Pawna Escape — The Team Getaway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #183b32;
+      --forest-2: #254b40;
+      --ink: #1c2b26;
+      --muted: #68766e;
+      --cream: #f5f3eb;
+      --paper: #fffefa;
+      --sage: #e5ebdf;
+      --lime: #d7e7b7;
+      --clay: #b66c4b;
+      --line: rgba(28, 43, 38, .14);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 18px 50px rgba(26, 48, 39, .12);
+      --radius: 24px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--forest-2); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 25px; height: 1px; background: currentColor; }
+    .section { padding: 112px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 42px; }
+    .section-head h2 { max-width: 680px; margin: 12px 0 0; font: 600 clamp(2.4rem, 5vw, 4.2rem)/1.05 var(--serif); letter-spacing: -.04em; }
+    .section-head p { max-width: 360px; margin: 0; color: var(--muted); }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 14px 20px; border: 1px solid transparent; border-radius: 999px; font-weight: 700; font-size: .88rem; cursor: pointer; transition: transform .2s ease, background .2s ease, color .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--lime); color: var(--forest); }
+    .btn-outline { color: white; border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.08); }
+    .btn-dark { background: var(--forest); color: white; }
+    .arrow { font-size: 1.05rem; line-height: 1; }
+
+    /* Navigation */
+    .site-header { position: absolute; inset: 0 0 auto; z-index: 20; color: white; }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 88px; border-bottom: 1px solid rgba(255,255,255,.2); }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .13em; font-size: .78rem; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; font: 600 1rem var(--serif); letter-spacing: 0; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.88); }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-cta { padding: 11px 17px; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; background: transparent; color: white; font-size: 1.25rem; cursor: pointer; }
+
+    /* Hero */
+    .hero { position: relative; min-height: 760px; min-height: min(880px, 100svh); display: flex; align-items: end; overflow: hidden; background: #25463a; color: white; }
+    .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-position: center 54%; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,29,24,.76) 0%, rgba(12,34,28,.42) 48%, rgba(12,34,28,.08) 100%), linear-gradient(0deg, rgba(8,25,20,.58), transparent 58%); }
+    .hero-content { position: relative; z-index: 2; width: min(var(--max), calc(100% - 48px)); margin: 0 auto; padding: 190px 0 88px; }
+    .hero-kicker { display: flex; align-items: center; gap: 12px; color: var(--lime); font-size: .76rem; letter-spacing: .19em; font-weight: 700; text-transform: uppercase; }
+    .hero-kicker::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+    .hero h1 { max-width: 800px; margin: 22px 0 22px; font: 600 clamp(4rem, 9vw, 8.4rem)/.91 var(--serif); letter-spacing: -.065em; }
+    .hero h1 em { color: var(--lime); font-weight: 500; }
+    .hero-copy { max-width: 520px; margin: 0; color: rgba(255,255,255,.86); font-size: clamp(1rem, 1.5vw, 1.16rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-top: 74px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.3); }
+    .hero-facts { display: flex; flex-wrap: wrap; gap: 34px; }
+    .hero-fact small { display: block; margin-bottom: 3px; color: rgba(255,255,255,.62); font-size: .66rem; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-fact strong { font-size: .94rem; font-weight: 600; }
+    .scroll-note { color: rgba(255,255,255,.75); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+
+    /* Intro */
+    .intro-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 9%; align-items: center; }
+    .intro-copy h2 { margin: 16px 0 22px; font: 600 clamp(2.7rem, 5.4vw, 5rem)/1.02 var(--serif); letter-spacing: -.05em; }
+    .intro-copy p { max-width: 510px; color: var(--muted); font-size: 1.02rem; }
+    .intro-note { display: flex; align-items: center; gap: 14px; margin-top: 30px; color: var(--forest); font-size: .86rem; font-weight: 700; }
+    .intro-note span { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); font-size: 1.1rem; }
+    .intro-visual { position: relative; }
+    .intro-visual img { height: 570px; border-radius: 48% 48% 18px 18px; }
+    .floating-card { position: absolute; left: -42px; bottom: 36px; max-width: 220px; padding: 21px; background: var(--paper); border-radius: 17px; box-shadow: var(--shadow); }
+    .floating-card strong { display: block; color: var(--forest); font: 600 1.35rem var(--serif); }
+    .floating-card span { display: block; margin-top: 7px; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+
+    /* Stay */
+    .stay-section { background: var(--forest); color: white; }
+    .stay-section .eyebrow { color: var(--lime); }
+    .stay-section .section-head p { color: rgba(255,255,255,.67); }
+    .stay-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 26px; align-items: stretch; }
+    .stay-photo { position: relative; min-height: 560px; overflow: hidden; border-radius: var(--radius); }
+    .stay-photo img { position: absolute; inset: 0; height: 100%; }
+    .photo-label { position: absolute; left: 22px; bottom: 22px; padding: 10px 14px; color: var(--forest); background: var(--lime); border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .stay-details { display: flex; flex-direction: column; justify-content: center; padding: 32px 16px 32px 30px; }
+    .stay-details h3 { margin: 0 0 15px; font: 600 2.35rem/1.1 var(--serif); letter-spacing: -.035em; }
+    .stay-details > p { color: rgba(255,255,255,.7); }
+    .stay-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; margin: 25px 0 0; padding: 0; list-style: none; }
+    .stay-list li { display: flex; align-items: start; gap: 10px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.9); font-size: .86rem; }
+    .stay-list li::before { content: "✳"; color: var(--lime); font-size: .9rem; }
+    .stay-footnote { margin-top: 28px; padding: 17px 18px; border-left: 2px solid var(--lime); background: rgba(255,255,255,.06); color: rgba(255,255,255,.72); font-size: .8rem; }
+
+    /* Itinerary */
+    .itinerary-section { background: var(--paper); }
+    .day-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .day-card { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); transition: transform .25s, box-shadow .25s; }
+    .day-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .day-image { position: relative; height: 230px; overflow: hidden; }
+    .day-image img { height: 100%; transition: transform .5s; }
+    .day-card:hover .day-image img { transform: scale(1.04); }
+    .day-number { position: absolute; top: 16px; left: 16px; padding: 8px 12px; color: var(--forest); background: var(--lime); border-radius: 999px; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .day-body { padding: 25px 24px 27px; }
+    .day-body h3 { margin: 0 0 8px; font: 600 1.65rem var(--serif); }
+    .day-body > p { margin: 0 0 18px; color: var(--muted); font-size: .88rem; }
+    .flow-list { margin: 0; padding: 0; list-style: none; }
+    .flow-list li { position: relative; padding: 11px 0 11px 19px; border-top: 1px solid var(--line); font-size: .84rem; }
+    .flow-list li::before { content: ""; position: absolute; left: 0; top: 18px; width: 6px; height: 6px; border-radius: 50%; background: var(--clay); }
+    .flow-list strong { display: block; margin-bottom: 2px; color: var(--forest); font-weight: 700; }
+    .flow-list span { display: block; color: var(--muted); }
+    .itinerary-note { display: flex; gap: 14px; align-items: start; margin-top: 24px; padding: 20px 22px; border-radius: 16px; background: var(--sage); color: var(--forest-2); font-size: .86rem; }
+    .itinerary-note b { flex: 0 0 auto; font-size: 1.15rem; }
+
+    /* Activities */
+    .activities-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .activity-card { position: relative; min-height: 300px; overflow: hidden; border-radius: 20px; color: white; background: #345447; }
+    .activity-card:nth-child(1), .activity-card:nth-child(4) { grid-column: span 7; }
+    .activity-card:nth-child(2), .activity-card:nth-child(3) { grid-column: span 5; }
+    .activity-card img { position: absolute; inset: 0; height: 100%; transition: transform .6s; }
+    .activity-card:hover img { transform: scale(1.05); }
+    .activity-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(9,26,21,.86), rgba(9,26,21,.05) 75%); }
+    .activity-content { position: absolute; z-index: 1; left: 25px; right: 25px; bottom: 24px; }
+    .activity-tag { display: inline-block; margin-bottom: 8px; color: var(--lime); font-size: .67rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .activity-content h3 { margin: 0 0 6px; font: 600 1.8rem var(--serif); }
+    .activity-content p { max-width: 470px; margin: 0; color: rgba(255,255,255,.8); font-size: .84rem; }
+    .activity-optional { margin-top: 22px; color: var(--muted); font-size: .8rem; }
+
+    /* Evening */
+    .evening { padding: 0 0 112px; }
+    .evening-panel { display: grid; grid-template-columns: 1fr 1fr; min-height: 470px; overflow: hidden; border-radius: 26px; background: #e9e5d9; }
+    .evening-panel img { height: 100%; min-height: 470px; }
+    .evening-copy { display: flex; flex-direction: column; justify-content: center; padding: 60px clamp(30px, 6vw, 78px); }
+    .evening-copy h2 { margin: 14px 0 18px; font: 600 clamp(2.5rem, 4.5vw, 4rem)/1.02 var(--serif); letter-spacing: -.045em; }
+    .evening-copy p { color: var(--muted); }
+    .evening-copy ul { margin: 18px 0 0; padding: 0; list-style: none; }
+    .evening-copy li { padding: 10px 0; border-top: 1px solid var(--line); font-size: .88rem; }
+    .evening-copy li::before { content: "↗"; margin-right: 11px; color: var(--clay); }
+
+    /* Food and travel */
+    .practical-section { padding-top: 0; }
+    .practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .practical-card { padding: 34px; border-radius: 20px; background: var(--sage); }
+    .practical-card:nth-child(2) { background: #eee7db; }
+    .practical-icon { width: 46px; height: 46px; display: grid; place-items: center; margin-bottom: 20px; border-radius: 50%; background: var(--paper); color: var(--forest); font-size: 1.2rem; }
+    .practical-card h3 { margin: 0 0 10px; font: 600 1.7rem var(--serif); }
+    .practical-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .practical-card ul { margin: 18px 0 0; padding-left: 18px; color: var(--ink); font-size: .85rem; }
+    .practical-card li { padding: 4px 0; }
+
+    /* Safety */
+    .safety-section { background: #e7e9df; }
+    .safety-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 9%; align-items: start; }
+    .safety-copy h2 { margin: 13px 0 18px; font: 600 clamp(2.5rem, 4.8vw, 4.2rem)/1.03 var(--serif); letter-spacing: -.045em; }
+    .safety-copy p { color: var(--muted); }
+    .safety-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .safety-item { padding: 19px; border: 1px solid rgba(24,59,50,.14); border-radius: 15px; background: rgba(255,255,255,.48); }
+    .safety-item strong { display: block; margin-bottom: 6px; color: var(--forest); font-size: .88rem; }
+    .safety-item span { color: var(--muted); font-size: .79rem; }
+    .source-link { display: inline-flex; gap: 8px; margin-top: 22px; color: var(--forest); font-size: .82rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+
+    /* Closing */
+    .closing { position: relative; min-height: 560px; display: grid; place-items: center; overflow: hidden; color: white; text-align: center; background: var(--forest); }
+    .closing img { position: absolute; inset: 0; height: 100%; }
+    .closing::after { content: ""; position: absolute; inset: 0; background: rgba(12,34,28,.62); }
+    .closing-content { position: relative; z-index: 1; width: min(750px, calc(100% - 40px)); padding: 90px 0; }
+    .closing .eyebrow { color: var(--lime); }
+    .closing h2 { margin: 18px 0; font: 600 clamp(3.3rem, 7vw, 6.2rem)/.98 var(--serif); letter-spacing: -.055em; }
+    .closing p { max-width: 540px; margin: 0 auto 28px; color: rgba(255,255,255,.82); }
+    footer { padding: 28px 0; background: #122e27; color: rgba(255,255,255,.65); font-size: .76rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { color: white; font-weight: 700; letter-spacing: .12em; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Lightbox and reveal */
+    .lightbox { position: fixed; inset: 0; z-index: 99; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(8,20,16,.92); }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: min(1100px, 92vw); max-height: 86vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-close { position: absolute; top: 22px; right: 24px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; background: transparent; color: white; font-size: 1.5rem; cursor: pointer; }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    :focus-visible { outline: 3px solid #c3db8e; outline-offset: 4px; }
+
+
+    /* Villa shortlist and team voting */
+    .villa-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .villa-card { overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 20px; background: rgba(255,255,255,.07); }
+    .villa-card-image { position: relative; height: 275px; overflow: hidden; background: #294c40; }
+    .villa-card-image img { height: 100%; transition: transform .55s; }
+    .villa-card:hover .villa-card-image img { transform: scale(1.04); }
+    .villa-tag { position: absolute; left: 17px; bottom: 16px; padding: 8px 12px; border-radius: 999px; background: var(--lime); color: var(--forest); font-size: .68rem; letter-spacing: .06em; font-weight: 700; }
+    .villa-card-body { padding: 25px; }
+    .villa-index { color: var(--lime); font-size: .68rem; font-weight: 700; letter-spacing: .16em; }
+    .villa-card-body h3 { margin: 7px 0 0; color: white; font: 600 1.9rem/1.1 var(--serif); }
+    .villa-location { margin: 7px 0 15px !important; color: var(--lime) !important; font-size: .78rem !important; font-weight: 600; }
+    .villa-card-body > p { margin: 0; color: rgba(255,255,255,.72); font-size: .88rem; }
+    .villa-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; margin: 17px 0 20px; padding: 0; list-style: none; }
+    .villa-features li { padding: 9px 0; border-top: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.88); font-size: .79rem; }
+    .villa-features li::before { content: "✓"; margin-right: 8px; color: var(--lime); font-weight: 700; }
+    .villa-card-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 13px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.16); }
+    .text-link { color: var(--lime); font-size: .82rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+    .btn-vote-choice { padding: 11px 16px; background: transparent; border-color: rgba(255,255,255,.42); color: white; font-size: .77rem; }
+    .btn-vote-choice.selected { background: var(--lime); border-color: var(--lime); color: var(--forest); }
+    .villa-caveat { display: block; margin-top: 16px; color: rgba(255,255,255,.56); font-size: .72rem; line-height: 1.5; }
+    .villa-compare-note { margin-top: 25px; padding: 19px 22px; border-left: 2px solid var(--lime); background: rgba(255,255,255,.07); color: rgba(255,255,255,.75); font-size: .84rem; }
+    .villa-compare-note strong { color: white; }
+
+    .vote-section { background: #edece3; }
+    .vote-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 8%; align-items: start; }
+    .vote-intro h2 { margin: 14px 0 19px; color: var(--forest); font: 600 clamp(2.8rem, 5vw, 4.6rem)/1.02 var(--serif); letter-spacing: -.05em; }
+    .vote-intro > p { color: var(--muted); }
+    .vote-how { margin-top: 30px; }
+    .vote-how > div { display: flex; gap: 15px; align-items: start; padding: 15px 0; border-top: 1px solid var(--line); }
+    .vote-how span { color: var(--clay); font: 600 1.1rem var(--serif); }
+    .vote-how p { margin: 0; color: var(--muted); font-size: .85rem; }
+    .vote-panel { padding: 29px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); box-shadow: var(--shadow); }
+    .vote-panel-head, .vote-results-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .vote-panel-head h3 { margin: 8px 0 0; font: 600 1.85rem var(--serif); color: var(--forest); }
+    .vote-live-status { padding: 7px 10px; border-radius: 999px; color: #52635a; background: #edf0e7; font-size: .67rem; font-weight: 700; white-space: nowrap; }
+    .vote-live-status.live { background: #e4f1e7; color: #23623d; }
+    .vote-live-status.preview { background: #f5eddb; color: #78591e; }
+    .vote-form { display: grid; gap: 9px; margin-top: 24px; }
+    .vote-form label { margin-top: 7px; color: var(--forest); font-size: .78rem; font-weight: 700; }
+    .vote-form input, .vote-form select { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; outline: none; background: white; color: var(--ink); font: inherit; font-size: .88rem; }
+    .vote-form input:focus, .vote-form select:focus { border-color: var(--forest-2); box-shadow: 0 0 0 3px rgba(37,75,64,.11); }
+    .vote-submit { width: 100%; margin-top: 9px; }
+    .vote-message { min-height: 20px; margin: 0; color: var(--muted); font-size: .75rem; }
+    .vote-results-head { margin-top: 27px; padding-top: 19px; border-top: 1px solid var(--line); }
+    .vote-results-head h4 { margin: 0; color: var(--forest); font: 600 1.25rem var(--serif); }
+    .refresh-votes { border: 0; background: none; color: var(--forest-2); font: 700 .75rem var(--sans); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+    .vote-results { display: grid; gap: 14px; margin-top: 18px; }
+    .vote-result-row { display: grid; gap: 7px; }
+    .vote-result-top { display: flex; justify-content: space-between; gap: 12px; color: var(--ink); font-size: .78rem; }
+    .vote-result-top strong { font-weight: 700; }
+    .vote-result-top span { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .vote-track { height: 9px; overflow: hidden; border-radius: 999px; background: #e9ece5; }
+    .vote-fill { height: 100%; width: 0; border-radius: inherit; background: var(--forest-2); transition: width .35s; }
+    .vote-loading { color: var(--muted); font-size: .8rem; }
+    .vote-privacy { margin: 18px 0 0; color: var(--muted); font-size: .7rem; line-height: 1.5; }
+
+    /* Train and road route */
+    .travel-section { background: var(--paper); }
+    .route-ribbon { display: flex; align-items: center; gap: 14px; margin: 8px 0 38px; padding: 25px; border-radius: 18px; background: var(--sage); }
+    .route-stop { flex: 0 0 auto; display: grid; justify-items: center; gap: 7px; min-width: 115px; text-align: center; }
+    .route-dot { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 50%; background: var(--forest); color: white; font-size: .74rem; font-weight: 700; }
+    .route-stop strong { color: var(--forest); font: 600 1.15rem var(--serif); }
+    .route-stop small { color: var(--muted); font-size: .66rem; }
+    .route-line { flex: 1 1 auto; height: 1px; min-width: 16px; background: rgba(24,59,50,.35); }
+    .route-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .route-step { position: relative; min-height: 260px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .route-step-no { color: var(--clay); font-size: .66rem; font-weight: 700; letter-spacing: .15em; }
+    .route-step-icon { display: grid; place-items: center; width: 43px; height: 43px; margin: 15px 0; border-radius: 50%; background: var(--sage); font-size: 1.15rem; }
+    .route-step h3 { margin: 0 0 10px; color: var(--forest); font: 600 1.55rem/1.15 var(--serif); }
+    .route-step p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .route-step small { display: block; margin-top: 15px; color: var(--forest-2); font-size: .72rem; font-weight: 700; }
+    .route-return { display: flex; justify-content: space-between; align-items: center; gap: 25px; margin-top: 20px; padding: 23px 25px; border-radius: 17px; background: var(--forest); color: white; }
+    .route-return strong { font: 600 1.2rem var(--serif); }
+    .route-return p { max-width: 590px; margin: 5px 0 0; color: rgba(255,255,255,.72); font-size: .8rem; }
+    .route-links { display: flex; flex-wrap: wrap; gap: 13px 20px; }
+    .route-links a { color: var(--lime); font-size: .75rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
+    .route-note { margin: 17px 0 0; padding: 0 3px; color: var(--muted); font-size: .78rem; }
+    .route-note strong { color: var(--forest); }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .intro-grid, .stay-grid, .safety-grid { gap: 38px; }
+      .intro-visual img { height: 470px; }
+      .stay-photo { min-height: 480px; }
+      .stay-details { padding: 14px 0 14px 8px; }
+      .day-grid { gap: 12px; }
+      .day-body { padding: 20px 18px; }
+      .day-image { height: 190px; }
+      .activity-card { min-height: 270px; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .section { padding: 78px 0; }
+      .section-head { display: block; margin-bottom: 30px; }
+      .section-head p { margin-top: 16px; }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links { position: absolute; top: 72px; left: 16px; right: 16px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 16px; background: rgba(20,49,41,.97); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 12px; }
+      .nav-cta { margin-top: 6px; text-align: center; }
+      .hero { min-height: 760px; min-height: 100svh; }
+      .hero-image { object-position: 58% center; }
+      .hero-content { width: calc(100% - 32px); padding: 150px 0 44px; }
+      .hero h1 { font-size: clamp(3.6rem, 17vw, 6.2rem); }
+      .hero-bottom { display: block; margin-top: 52px; }
+      .hero-facts { gap: 19px 26px; }
+      .scroll-note { display: none; }
+      .intro-grid, .stay-grid, .evening-panel, .practical-grid, .safety-grid { grid-template-columns: 1fr; }
+      .intro-grid { gap: 34px; }
+      .intro-visual { padding-left: 20px; }
+      .intro-visual img { height: 440px; }
+      .floating-card { left: -2px; bottom: 20px; }
+      .stay-photo { min-height: 380px; }
+      .stay-details { padding: 6px 0 0; }
+      .stay-list { grid-template-columns: 1fr 1fr; }
+      .day-grid { grid-template-columns: 1fr; gap: 18px; }
+      .day-image { height: 235px; }
+      .day-body { padding: 24px; }
+      .activities-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .activity-card, .activity-card:nth-child(n) { grid-column: span 1; min-height: 260px; }
+      .activity-card:first-child, .activity-card:last-child { grid-column: span 2; }
+      .activity-content { left: 17px; right: 17px; bottom: 17px; }
+      .activity-content h3 { font-size: 1.45rem; }
+      .activity-content p { font-size: .76rem; }
+      .evening { padding-bottom: 78px; }
+      .evening-panel img { min-height: 320px; max-height: 360px; }
+      .evening-copy { padding: 34px 25px 38px; }
+      .practical-section { padding-bottom: 78px; }
+      .practical-card { padding: 27px; }
+      .safety-grid { gap: 25px; }
+      .safety-list { grid-template-columns: 1fr; }
+      .closing { min-height: 500px; }
+      .footer-inner { display: block; }
+      .footer-links { margin-top: 14px; }
+    }
+    @media (max-width: 900px) {
+      .vote-layout { grid-template-columns: 1fr; gap: 30px; }
+      .route-return { display: block; }
+      .route-links { margin-top: 17px; }
+    }
+    @media (max-width: 700px) {
+      .villa-grid, .route-steps { grid-template-columns: 1fr; }
+      .villa-card-image { height: 235px; }
+      .villa-features { grid-template-columns: 1fr; }
+      .vote-panel { padding: 22px; }
+      .route-ribbon { align-items: stretch; flex-direction: column; gap: 9px; padding: 20px; }
+      .route-stop { display: flex; justify-content: flex-start; text-align: left; min-width: 0; }
+      .route-stop strong { min-width: 125px; }
+      .route-line { flex: 0 0 17px; width: 1px; height: 17px; min-width: 1px; margin-left: 18px; }
+      .route-stop small { margin-left: auto; text-align: right; }
+      .route-step { min-height: auto; padding: 23px; }
+      .route-links { display: grid; }
+      .route-links a { white-space: normal; }
+      .vote-panel-head { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Pawna Escape home">
+        <span class="brand-mark">P</span>
+        <span>PAWNA <span style="color:var(--lime)">ESCAPE</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#experience">The experience</a>
+        <a href="#villas">Villa options</a>
+        <a href="#itinerary">The plan</a>
+        <a href="#travel">Train route</a>
+        <a href="#vote" class="nav-cta">Vote for a villa <span class="arrow">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <img class="hero-image gallery-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1365044094877344085/original/97287575-6080-4dd4-b2dd-caf7dca8b54e.jpeg" alt="Aerial view of lakeside villas beside Pawna Lake and the surrounding hills" fetchpriority="high" onerror="this.src='https://gos3.ibcdn.com/fb53a4a8ddba11ec95cb0a58a9feac02.jpeg'">
+      <div class="hero-content">
+        <div class="hero-kicker">A company team getaway · Maharashtra</div>
+        <h1>Out of office.<br><em>Into the open.</em></h1>
+        <p class="hero-copy">A lakeside escape to slow down, get together and make room for the kind of moments that don't happen between meetings.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#itinerary">Explore the plan <span class="arrow">↘</span></a>
+          <a class="btn btn-outline" href="#stay">Discover the stay</a>
+        </div>
+        <div class="hero-bottom">
+          <div class="hero-facts">
+            <div class="hero-fact"><small>Destination</small><strong>Pawna Lake, Maharashtra</strong></div>
+            <div class="hero-fact"><small>The escape</small><strong>Three days · Two nights</strong></div>
+            <div class="hero-fact"><small>The setting</small><strong>Private lakeside villa</strong></div>
+          </div>
+          <div class="scroll-note">Scroll to explore ↓</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap intro-grid">
+        <div class="intro-copy reveal">
+          <span class="eyebrow">A change of scenery</span>
+          <h2>Good people.<br>Fresh air.<br><em style="color:var(--clay)">No rush.</em></h2>
+          <p>This getaway is about stepping away from the usual routine and spending time together in a completely different setting. Think open views, unhurried mornings, a beautiful villa, shared meals and a few adventures along the way.</p>
+          <p>There is a plan for the group, but plenty of space to do your own thing too. Join an activity, lounge by the pool, take photographs or simply enjoy the lake and the hills.</p>
+          <div class="intro-note"><span>✳</span> The best part is being there together.</div>
+        </div>
+        <div class="intro-visual reveal">
+          <img class="gallery-image" src="https://ik.imagekit.io/5tgxhsqev/saffronstays-media/image/upload/1750161850291728991?tr=w-1920%2Cq-75%2Cf-webp" alt="Villa terrace and swimming pool overlooking the surrounding greenery" loading="lazy" onerror="this.src='https://bookings.jalantastays.com/storage/villas/base_images/1764584320_WhatsApp%20Image%202025-11-28%20at%204.44.06%20PM.jpeg'">
+          <div class="floating-card"><strong>Room to unwind</strong><span>A private base for the whole team, with the outdoors just beyond the door.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stay-section" id="stay">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Choose our base</span><h2>Which villa feels<br>like our kind of escape?</h2></div>
+          <p>These are shortlist options for the team to explore. Compare the setting, sleeping layout and shared spaces, then cast a vote for the property you'd most like us to pursue.</p>
+        </div>
+
+        <div class="villa-grid" id="villas">
+          <article class="villa-card reveal">
+            <div class="villa-card-image">
+              <img class="gallery-image" src="https://www.kinolakeside.com/wp-content/uploads/2026/09/pawna-lake-bungalows-for-rent-suite.jpg" alt="Kino Lakeside Chalet lounge opening towards Pawna Lake" loading="lazy">
+              <span class="villa-tag">Waterfront setting</span>
+            </div>
+            <div class="villa-card-body">
+              <div class="villa-index">OPTION A</div>
+              <h3>Kino Lakeside Chalet</h3>
+              <p class="villa-location">Pawna Lake · Lakeside</p>
+              <p>A private chalet promoted for group stays, with lake-facing suites and a dedicated hospitality setup.</p>
+              <ul class="villa-features">
+                <li>Advertised for up to 15 guests</li>
+                <li>Three air-conditioned suites</li>
+                <li>Indoor heated dip pool</li>
+                <li>Lakeside lawn and bonfire arrangements</li>
+                <li>Butler-led meal and guest support</li>
+              </ul>
+              <div class="villa-card-actions">
+                <a class="text-link" href="https://www.kinolakeside.com/pawna-lake-bungalows-for-rent/" target="_blank" rel="noopener">View official property ↗</a>
+                <button class="btn btn-vote-choice" type="button" data-villa="kino-lakeside">Choose this villa</button>
+              </div>
+              <small class="villa-caveat">Confirm the exact bedroom/bed arrangement and current inclusions directly with the property.</small>
+            </div>
+          </article>
+
+          <article class="villa-card reveal">
+            <div class="villa-card-image">
+              <img class="gallery-image" src="https://bookings.jalantastays.com/storage/villas/base_images/large_1772092899_gsfYW.jpg" alt="Aerial view of Atlantis villa beside Pawna Lake" loading="lazy">
+              <span class="villa-tag">Direct lake access listed</span>
+            </div>
+            <div class="villa-card-body">
+              <div class="villa-index">OPTION B</div>
+              <h3>Atlantis 4 BHK</h3>
+              <p class="villa-location">Pawna · Jalanta Stays</p>
+              <p>A group-friendly lakeside villa with outdoor space for games and a relaxed team evening.</p>
+              <ul class="villa-features">
+                <li>Advertised for up to 15 guests</li>
+                <li>Four air-conditioned bedrooms</li>
+                <li>Private pool and large lawn</li>
+                <li>Private turf and BBQ area</li>
+                <li>Table tennis, board games and speaker</li>
+              </ul>
+              <div class="villa-card-actions">
+                <a class="text-link" href="https://www.jalantastays.com/villa/atlantis-4-bhk-luxury-villa-in-pawna-with-private-pool/" target="_blank" rel="noopener">View official property ↗</a>
+                <button class="btn btn-vote-choice" type="button" data-villa="atlantis-4bhk">Choose this villa</button>
+              </div>
+              <small class="villa-caveat">The listing advertises lake access. Confirm shoreline access, sleeping capacity and meal arrangements.</small>
+            </div>
+          </article>
+
+          <article class="villa-card reveal">
+            <div class="villa-card-image">
+              <img class="gallery-image" src="https://amarjaexperience.com/api/files/amarja-experience/hero/sierra-vista/8c496503f54e4cd69b05d8ae8991fc0f.jpg" alt="Sierra Vista villa and private pool at Amarja Hills" loading="lazy">
+              <span class="villa-tag">Lake-facing plot</span>
+            </div>
+            <div class="villa-card-body">
+              <div class="villa-index">OPTION C</div>
+              <h3>Sierra Vista</h3>
+              <p class="villa-location">Amarja Hills · Pawna Dam Road</p>
+              <p>A spacious villa with a traditional Maharashtrian wada-inspired design, pool and outdoor lawn.</p>
+              <ul class="villa-features">
+                <li>Advertised for 10–15 guests</li>
+                <li>Four king-size bedrooms and attached bathrooms</li>
+                <li>Private swimming pool</li>
+                <li>Large lawn, gazebo and outdoor sit-out</li>
+                <li>In-house cook and housekeeping</li>
+              </ul>
+              <div class="villa-card-actions">
+                <a class="text-link" href="https://amarjaexperience.com/villa/sierra-vista" target="_blank" rel="noopener">View official property ↗</a>
+                <button class="btn btn-vote-choice" type="button" data-villa="sierra-vista">Choose this villa</button>
+              </div>
+              <small class="villa-caveat">This is a lake-facing property, not confirmed as a villa directly on the shoreline.</small>
+            </div>
+          </article>
+
+          <article class="villa-card reveal">
+            <div class="villa-card-image">
+              <img class="gallery-image" src="https://lakesanctuarypawna.com/_next/image?q=75&url=%2Fimages%2Fvilla-pawna%2FTerrace_Lake_Panorama_2.jpg&w=3840" alt="Lake Sanctuary Pawna garden terrace overlooking the lake" loading="lazy">
+              <span class="villa-tag">Larger group option</span>
+            </div>
+            <div class="villa-card-body">
+              <div class="villa-index">OPTION D</div>
+              <h3>Lake Sanctuary Pawna</h3>
+              <p class="villa-location">Apati · Pawna Lake</p>
+              <p>A private lake-facing estate with expansive shared spaces. This is the larger-property option if the team prefers extra room.</p>
+              <ul class="villa-features">
+                <li>Advertised for 16–20 guests</li>
+                <li>Eight-bedroom layout</li>
+                <li>Private swimming pool</li>
+                <li>Lake-facing terrace and lawn</li>
+                <li>Indoor games and caretaker support</li>
+              </ul>
+              <div class="villa-card-actions">
+                <a class="text-link" href="https://lakesanctuarypawna.com/villas/villa-pawna" target="_blank" rel="noopener">View official property ↗</a>
+                <button class="btn btn-vote-choice" type="button" data-villa="lake-sanctuary">Choose this villa</button>
+              </div>
+              <small class="villa-caveat">Its advertised capacity is above our expected group size. Ask whether a smaller group booking is suitable.</small>
+            </div>
+          </article>
+        </div>
+
+        <div class="villa-compare-note reveal">
+          <strong>How to compare:</strong> Give priority to the actual sleeping layout, exclusive-use privacy, lake access, meal arrangements and the property's rules for music and evening activities. Listing details are a starting point; all facilities and group capacity must be reconfirmed before selection.
+        </div>
+      </div>
+    </section>
+
+    <section class="section vote-section" id="vote">
+      <div class="wrap vote-layout">
+        <div class="vote-intro reveal">
+          <span class="eyebrow">Team decision</span>
+          <h2>Pick the villa<br>you'd love to stay in.</h2>
+          <p>Choose your favourite from the shortlist. The team can compare the live results and use them to guide the final property discussion.</p>
+          <div class="vote-how">
+            <div><span>01</span><p>Explore the villa cards and open their official listings.</p></div>
+            <div><span>02</span><p>Enter your name and select the villa you prefer.</p></div>
+            <div><span>03</span><p>Submit your choice. You can update your vote later from the same browser.</p></div>
+          </div>
+        </div>
+        <div class="vote-panel reveal">
+          <div class="vote-panel-head">
+            <div><span class="eyebrow">Your vote</span><h3>Villa preference</h3></div>
+            <span class="vote-live-status" id="voteMode">Checking voting setup…</span>
+          </div>
+          <form id="villaVoteForm" class="vote-form">
+            <label for="voterName">Your name</label>
+            <input id="voterName" name="voterName" type="text" maxlength="80" placeholder="Enter your name" autocomplete="name" required>
+            <label for="villaChoice">Choose your preferred villa</label>
+            <select id="villaChoice" name="villaChoice" required>
+              <option value="">Select a villa option</option>
+              <option value="kino-lakeside">Kino Lakeside Chalet</option>
+              <option value="atlantis-4bhk">Atlantis 4 BHK</option>
+              <option value="sierra-vista">Sierra Vista</option>
+              <option value="lake-sanctuary">Lake Sanctuary Pawna</option>
+            </select>
+            <button class="btn btn-dark vote-submit" type="submit" id="voteSubmit">Submit my vote <span class="arrow">↗</span></button>
+            <p class="vote-message" id="voteMessage" role="status" aria-live="polite">Your selection will appear in the results below.</p>
+          </form>
+          <div class="vote-results-head"><h4>Team preference</h4><button type="button" class="refresh-votes" id="refreshVotes">Refresh results ↻</button></div>
+          <div id="voteResults" class="vote-results" aria-live="polite">
+            <p class="vote-loading">Loading villa preferences…</p>
+          </div>
+          <p class="vote-privacy">Only villa totals are shown publicly. Names are used to associate a person's vote with their choice, not displayed in the results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section itinerary-section" id="itinerary">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">The flow of the getaway</span><h2>A little adventure.<br>A lot of breathing room.</h2></div>
+          <p>The itinerary balances travel, time at the villa, outdoor experiences and proper downtime. The final sequence can flex around the chosen property's check-in arrangements and local conditions.</p>
+        </div>
+        <div class="day-grid">
+          <article class="day-card reveal">
+            <div class="day-image"><img class="gallery-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1365044094877344085/original/97287575-6080-4dd4-b2dd-caf7dca8b54e.jpeg" alt="Pawna Lake and villas in a green valley" loading="lazy"><span class="day-number">Day one</span></div>
+            <div class="day-body">
+              <h3>Arrive & unwind</h3>
+              <p>Ease into the getaway. Settle in, explore the property and let the outside world fade away.</p>
+              <ul class="flow-list">
+                <li><strong>Gather & travel</strong><span>Meet at the agreed pickup point and head towards Pawna together.</span></li>
+                <li><strong>Welcome to the villa</strong><span>Check in, choose rooms, freshen up and get familiar with the space.</span></li>
+                <li><strong>Lunch & downtime</strong><span>Share a meal, relax and enjoy the property.</span></li>
+                <li><strong>Pool & lawn time</strong><span>Take a dip in the villa pool, play a casual game or simply lounge.</span></li>
+                <li><strong>Sunset by the lake</strong><span>Make time for photographs and a relaxed group catch-up.</span></li>
+                <li><strong>Welcome evening</strong><span>Dinner, music, conversations and easy-going games at the villa.</span></li>
+              </ul>
+            </div>
+          </article>
+          <article class="day-card reveal">
+            <div class="day-image"><img class="gallery-image" src="https://campwale.com/cdn/shop/files/kayakinginpawna_2048x.jpg?v=1693821218" alt="Kayaking across Pawna Lake at sunset" loading="lazy"><span class="day-number">Day two</span></div>
+            <div class="day-body">
+              <h3>Explore & connect</h3>
+              <p>The main experience day. Pick an outdoor adventure, then come back together for a full villa afternoon and evening.</p>
+              <ul class="flow-list">
+                <li><strong>Slow breakfast</strong><span>Start with breakfast and a relaxed morning at the property.</span></li>
+                <li><strong>Choose your outing</strong><span>Optional kayaking or boating with a local operator, or a guided walk / Tikona Fort outing for those who want to explore.</span></li>
+                <li><strong>Regroup for lunch</strong><span>Return to the villa and enjoy a proper meal together.</span></li>
+                <li><strong>Free afternoon</strong><span>Pool time, board games, music, photography or a much-needed nap.</span></li>
+                <li><strong>Team challenges</strong><span>Light-hearted games, a photo challenge or friendly team-versus-team activities.</span></li>
+                <li><strong>Signature team evening</strong><span>A shared dinner followed by music, karaoke, stories and a bonfire if the property permits it.</span></li>
+              </ul>
+            </div>
+          </article>
+          <article class="day-card reveal">
+            <div class="day-image"><img class="gallery-image" src="https://www.hireacamp.com/api/external/image?name=uploads%2F79e199b9d88546c087d7103622f09dcc.jpeg&q=75&size=3840x3840" alt="Green lawn, pool and mountain views around Pawna" loading="lazy"><span class="day-number">Day three</span></div>
+            <div class="day-body">
+              <h3>One last slow morning</h3>
+              <p>No rushed start. Enjoy the setting, pack up and make the return journey together.</p>
+              <ul class="flow-list">
+                <li><strong>Sunrise & fresh air</strong><span>Optional lakeside walk, photographs and quiet time.</span></li>
+                <li><strong>Breakfast together</strong><span>One last meal at the villa and a relaxed catch-up.</span></li>
+                <li><strong>Final group photos</strong><span>Capture the team, the property and the view before leaving.</span></li>
+                <li><strong>Check out & depart</strong><span>Pack, check the rooms and leave the property as agreed.</span></li>
+                <li><strong>Return journey</strong><span>Travel back together, with a meal stop along the way if needed.</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="itinerary-note reveal"><b>✳</b><div><strong>Keep it flexible.</strong> The lake outing and fort visit are optional experiences, not fixed commitments. The group can choose what suits the weather, local operator availability and everyone's comfort.</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Make it your kind of getaway</span><h2>Things to do.<br>Or absolutely nothing.</h2></div>
+          <p>There is something for the adventurous ones, the competitive ones, the photographers and the people whose ideal activity is finding the best chair with a view.</p>
+        </div>
+        <div class="activities-grid">
+          <article class="activity-card reveal">
+            <img class="gallery-image" src="https://campwale.com/cdn/shop/files/kayakinginpawna_2048x.jpg?v=1693821218" alt="Kayaking on Pawna Lake" loading="lazy">
+            <div class="activity-content"><span class="activity-tag">On the water · Optional</span><h3>Kayaking & boating</h3><p>Enjoy the lake with a recognised local operator, suitable safety equipment and life jackets.</p></div>
+          </article>
+          <article class="activity-card reveal">
+            <img class="gallery-image" src="https://www.trekhievers.com/system/images/000/600/675/d7813a0372030d55e77400191bd477f7/banner/img_2b6e15fe8a9e25ca7acba6a4e786a50e_1564576398591_processed_original.jpeg" alt="Tikona Fort summit above Pawna Lake" loading="lazy">
+            <div class="activity-content"><span class="activity-tag">Explore · Optional</span><h3>Tikona Fort</h3><p>A scenic fort outing with sweeping views over the Pawna landscape. Best for those comfortable with a hike.</p></div>
+          </article>
+          <article class="activity-card reveal">
+            <img class="gallery-image" src="https://bookings.jalantastays.com/storage/villas/base_images/1764584320_WhatsApp%20Image%202025-11-28%20at%204.44.06%20PM.jpeg" alt="Private villa swimming pool and deck" loading="lazy">
+            <div class="activity-content"><span class="activity-tag">At the villa</span><h3>Poolside downtime</h3><p>Swim, lounge, listen to music or take a break from the group activities.</p></div>
+          </article>
+          <article class="activity-card reveal">
+            <img class="gallery-image" src="https://pawnalake-camping.com/assets/images/home/pawna-lake-hero-group.webp" alt="Friends sitting together around a lakeside bonfire at sunset" loading="lazy">
+            <div class="activity-content"><span class="activity-tag">After sunset</span><h3>Bonfire & stories</h3><p>Bring everyone together for music, conversations, karaoke and a laid-back evening, subject to villa rules.</p></div>
+          </article>
+        </div>
+        <p class="activity-optional">Also worth bringing along: badminton, frisbee, cards, board games, a shared playlist and a camera for a friendly team photo challenge.</p>
+      </div>
+    </section>
+
+    <section class="evening">
+      <div class="wrap">
+        <div class="evening-panel reveal">
+          <img class="gallery-image" src="https://pawnalake-camping.com/assets/images/home/pawna-lake-hero-group.webp" alt="A group of friends relaxing around a bonfire beside Pawna Lake" loading="lazy">
+          <div class="evening-copy">
+            <span class="eyebrow">The moment we'll remember</span>
+            <h2>One evening.<br>Everyone together.</h2>
+            <p>The signature team evening should feel effortless, not over-organised. Good food, a little music and a setting that makes people want to stay outside a little longer.</p>
+            <ul>
+              <li>Shared dinner and relaxed seating</li>
+              <li>Team quiz, games or a fun awards round</li>
+              <li>Karaoke and a shared playlist</li>
+              <li>Bonfire, only where the property allows it</li>
+              <li>Group photographs and a final toast to the getaway</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section travel-section" id="travel">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Getting from the city to the lake</span><h2>From Bhayandar.<br>Across Mumbai. Into Pawna.</h2></div>
+          <p>A rail-first route keeps the group journey straightforward. The exact service will be chosen after the travel day is confirmed and the live timetable is checked.</p>
+        </div>
+        <div class="route-ribbon reveal" aria-label="Travel route: Bhayandar to Dadar Western, interchange to Dadar Central, train to Lonavala, road transfer to Pawna Lake">
+          <div class="route-stop"><span class="route-dot">01</span><strong>Bhayandar</strong><small>Western Railway</small></div>
+          <span class="route-line"></span>
+          <div class="route-stop"><span class="route-dot">02</span><strong>Dadar</strong><small>Change railway zone</small></div>
+          <span class="route-line"></span>
+          <div class="route-stop"><span class="route-dot">03</span><strong>Lonavala</strong><small>Central Railway</small></div>
+          <span class="route-line"></span>
+          <div class="route-stop"><span class="route-dot">04</span><strong>Pawna villa</strong><small>Pre-arranged road transfer</small></div>
+        </div>
+        <div class="route-steps">
+          <article class="route-step reveal">
+            <span class="route-step-no">STEP 01</span>
+            <div class="route-step-icon">🚆</div>
+            <h3>Bhayandar → Dadar Western</h3>
+            <p>Board a Western Line local heading towards Churchgate and get down at <strong>Dadar Western</strong>. Before boarding, check the destination and stopping pattern on the station indicator so the selected service actually stops at Dadar.</p>
+            <small>Railway zone: Western Railway · Station code: DDR</small>
+          </article>
+          <article class="route-step reveal">
+            <span class="route-step-no">STEP 02</span>
+            <div class="route-step-icon">↔</div>
+            <h3>Interchange at Dadar</h3>
+            <p>Use the foot overbridge and station signage to move from the Western Railway platforms to the <strong>Central Railway</strong> side. Dadar is a busy interchange, so keep a comfortable transfer buffer and regroup before boarding.</p>
+            <small>Follow signs for Central Railway / mainline trains.</small>
+          </article>
+          <article class="route-step reveal">
+            <span class="route-step-no">STEP 03</span>
+            <div class="route-step-icon">🚄</div>
+            <h3>Dadar Central → Lonavala</h3>
+            <p>Board a scheduled <strong>Central Railway intercity or express train</strong> from Dadar that has Lonavala as a listed stop. This is not a regular Central Line suburban local all the way to Lonavala, so select the correct mainline service and confirm the stop before reserving seats.</p>
+            <small>Check the live train listing and platform before departure.</small>
+          </article>
+          <article class="route-step reveal">
+            <span class="route-step-no">STEP 04</span>
+            <div class="route-step-icon">🚐</div>
+            <h3>Lonavala → Pawna Lake</h3>
+            <p>Meet the pre-arranged cab or group vehicle outside Lonavala station. Continue to the selected villa together. The last-mile route depends on which property the team chooses, so share the exact villa pin with the driver.</p>
+            <small>Keep the villa contact and driver details with the trip organiser.</small>
+          </article>
+        </div>
+        <div class="route-return reveal">
+          <div><strong>Return journey</strong><p>Reverse the same plan: villa pickup → Lonavala station → Central Railway train to Dadar → interchange to Western Railway → Bhayandar.</p></div>
+          <div class="route-links">
+            <a href="https://www.irctc.co.in/nget/train-search" target="_blank" rel="noopener">IRCTC train search ↗</a>
+            <a href="https://enquiry.indianrail.gov.in/mntes/" target="_blank" rel="noopener">NTES live train enquiry ↗</a>
+            <a href="https://www.google.com/maps/dir/Bhayandar+Railway+Station/Dadar+Western+Railway+Station/Dadar+Central+Railway+Station/Lonavala+Railway+Station/" target="_blank" rel="noopener">Open station route ↗</a>
+          </div>
+        </div>
+        <p class="route-note"><strong>Before travel:</strong> once the travel day is decided, check the exact train, running days, Dadar stop, Lonavala arrival, reservation availability and return service. If there is no suitable Dadar departure, the organiser can compare a Central Railway departure from CSMT instead.</p>
+      </div>
+    </section>
+
+    <section class="section practical-section" id="essentials">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">The little details</span><h2>Good planning makes<br>space for good memories.</h2></div>
+          <p>We'll keep the logistics simple and make sure the important details are sorted before the team sets off.</p>
+        </div>
+        <div class="practical-grid">
+          <article class="practical-card reveal">
+            <div class="practical-icon">⌁</div>
+            <h3>Getting there together</h3>
+            <p>Travel as a group from an agreed pickup point, with the route and vehicle plan confirmed once the villa location is final.</p>
+            <ul>
+              <li>Share pickup and return arrangements with everyone</li>
+              <li>Keep luggage and seating in mind</li>
+              <li>Plan a comfortable meal and refreshment stop</li>
+              <li>Keep the villa's check-in and check-out rules handy</li>
+            </ul>
+          </article>
+          <article class="practical-card reveal">
+            <div class="practical-icon">✳</div>
+            <h3>Meals & villa life</h3>
+            <p>Make meals part of the experience: simple, fresh and easy for everyone to enjoy.</p>
+            <ul>
+              <li>Coordinate breakfast, lunch, snacks and dinner</li>
+              <li>Collect dietary needs before confirming the menu</li>
+              <li>Ask about vegetarian and Jain meal options where needed</li>
+              <li>Confirm drinking water, tea, coffee and kitchen access</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section safety-section">
+      <div class="wrap safety-grid">
+        <div class="safety-copy reveal">
+          <span class="eyebrow">A good trip is a safe trip</span>
+          <h2>Enjoy the lake.<br>Respect the outdoors.</h2>
+          <p>We'll keep activities sensible, use verified local providers and follow the villa's rules. The reservoir is not a swimming area; water activities should only happen through an organised operator with proper safety equipment.</p>
+          <a class="source-link" href="https://maharashtratourism.gov.in/nature/lonavala/" target="_blank" rel="noopener">Explore Maharashtra Tourism's Lonavala guide ↗</a>
+        </div>
+        <div class="safety-list reveal">
+          <div class="safety-item"><strong>Lake activities</strong><span>Use a recognised operator, wear a life jacket and follow instructions. Never enter the reservoir to swim.</span></div>
+          <div class="safety-item"><strong>Fort outing</strong><span>Choose a suitable route, wear grippy footwear, carry water and skip the hike in unsafe weather.</span></div>
+          <div class="safety-item"><strong>Villa pool</strong><span>Follow pool rules, respect depth markings and avoid swimming alone.</span></div>
+          <div class="safety-item"><strong>Evening by the lake</strong><span>Stay within permitted areas and avoid walking close to the water after dark.</span></div>
+          <div class="safety-item"><strong>Bonfire & music</strong><span>Confirm permission with the property and follow its sound and fire-safety rules.</span></div>
+          <div class="safety-item"><strong>Leave no trace</strong><span>Keep the property and shoreline clean; take all personal waste back with the group.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <img class="gallery-image" src="https://gos3.ibcdn.com/fb53a4a8ddba11ec95cb0a58a9feac02.jpeg" alt="Warm sunset over a lakefront villa and mountains" loading="lazy">
+      <div class="closing-content reveal">
+        <span class="eyebrow">Pawna Escape · Company team getaway</span>
+        <h2>Let's make<br>some room for life.</h2>
+        <p>A change of pace, a beautiful place and good people to share it with. That's the whole plan.</p>
+        <a class="btn btn-primary" href="#top">Back to the beginning <span class="arrow">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><div class="footer-brand">PAWNA ESCAPE</div><div>Company team getaway · Maharashtra</div></div>
+      <div class="footer-links">
+        <a href="https://maharashtratourism.gov.in/nature/lonavala/" target="_blank" rel="noopener">Maharashtra Tourism</a>
+        <a href="https://pawnacampex.com/activities" target="_blank" rel="noopener">Pawna activity reference</a>
+        <a href="https://www.trekhievers.com/tours/tikona" target="_blank" rel="noopener">Tikona Fort reference</a>
+        <a href="https://www.irctc.co.in/nget/train-search" target="_blank" rel="noopener">Train search</a>
+      </div>
+      <div>Concept proposal · Villa and activities subject to confirmation</div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded photograph">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <img id="lightboxImage" src="" alt="Expanded trip photograph">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/config.js"></script>
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation');
+      menuToggle.textContent = '☰';
+    }));
+
+    // Subtle scroll reveals, with a graceful fallback for older browsers.
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => revealObserver.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('visible'));
+    }
+
+    // Tap/click a photograph to view it larger.
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = () => lightbox.classList.remove('open');
+    document.querySelectorAll('.gallery-image').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImage.src = img.currentSrc || img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.classList.add('open');
+      });
+    });
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeLightbox(); });
+
+    // Villa preference poll. Configure Supabase for shared results across everyone's devices.
+    const villaNames = {
+      'kino-lakeside': 'Kino Lakeside Chalet',
+      'atlantis-4bhk': 'Atlantis 4 BHK',
+      'sierra-vista': 'Sierra Vista',
+      'lake-sanctuary': 'Lake Sanctuary Pawna'
+    };
+    const voteForm = document.getElementById('villaVoteForm');
+    const voteName = document.getElementById('voterName');
+    const voteChoice = document.getElementById('villaChoice');
+    const voteMessage = document.getElementById('voteMessage');
+    const voteSubmit = document.getElementById('voteSubmit');
+    const voteResults = document.getElementById('voteResults');
+    const voteMode = document.getElementById('voteMode');
+    const voterKeyStorage = 'pawna-escape-voter-key';
+    const localVoteStorage = 'pawna-escape-local-votes';
+    const localIdentityStorage = 'pawna-escape-local-identity';
+    const pawnaConfig = window.PAWNA_CONFIG || {};
+    const canUseSupabase = Boolean(pawnaConfig.supabaseUrl && pawnaConfig.supabaseAnonKey && window.supabase);
+    const pawnaSupabase = canUseSupabase ? window.supabase.createClient(pawnaConfig.supabaseUrl, pawnaConfig.supabaseAnonKey) : null;
+    let selectedVilla = '';
+
+    function getVoterKey() {
+      let key = localStorage.getItem(voterKeyStorage);
+      if (!key) {
+        key = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+          const r = Math.random() * 16 | 0;
+          return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+        localStorage.setItem(voterKeyStorage, key);
+      }
+      return key;
+    }
+
+    function readLocalVotes() {
+      try { return JSON.parse(localStorage.getItem(localVoteStorage) || '[]'); }
+      catch (_) { return []; }
+    }
+
+    function paintVoteCounts(counts) {
+      const total = Object.values(counts).reduce((sum, n) => sum + Number(n || 0), 0);
+      voteResults.innerHTML = Object.entries(villaNames).map(([id, name]) => {
+        const count = Number(counts[id] || 0);
+        const percent = total ? Math.round((count / total) * 100) : 0;
+        return `<div class="vote-result-row"><div class="vote-result-top"><strong>${name}</strong><span>${count} ${count === 1 ? 'vote' : 'votes'} · ${percent}%</span></div><div class="vote-track"><div class="vote-fill" style="width:${percent}%"></div></div></div>`;
+      }).join('') + `<p class="vote-loading">${total ? `${total} ${total === 1 ? 'response' : 'responses'} recorded.` : 'No votes yet. Be the first to choose.'}</p>`;
+    }
+
+    async function refreshVoteCounts() {
+      if (canUseSupabase) {
+        const { data, error } = await pawnaSupabase.rpc('get_pawna_villa_vote_counts');
+        if (error) {
+          voteResults.innerHTML = '<p class="vote-loading">Shared results could not be loaded. Check the Supabase setup and refresh.</p>';
+          console.error('Could not load shared villa votes:', error);
+          return;
+        }
+        const counts = {};
+        (data || []).forEach(row => { counts[row.villa_id] = Number(row.vote_count); });
+        paintVoteCounts(counts);
+        return;
+      }
+      const counts = {};
+      readLocalVotes().forEach(vote => { counts[vote.villaId] = (counts[vote.villaId] || 0) + 1; });
+      paintVoteCounts(counts);
+    }
+
+    if (canUseSupabase) {
+      voteMode.textContent = 'Shared team voting';
+      voteMode.classList.add('live');
+      const identity = JSON.parse(localStorage.getItem(localIdentityStorage) || '{}');
+      if (identity.name) voteName.value = identity.name;
+      if (identity.villaId) voteChoice.value = identity.villaId;
+      voteMessage.textContent = 'Votes are shared with everyone who opens this website.';
+    } else {
+      voteMode.textContent = 'Preview mode';
+      voteMode.classList.add('preview');
+      const identity = JSON.parse(localStorage.getItem(localIdentityStorage) || '{}');
+      if (identity.name) voteName.value = identity.name;
+      if (identity.villaId) voteChoice.value = identity.villaId;
+      voteMessage.textContent = 'Preview only: votes are saved in this browser. Configure Supabase to share the team results across devices.';
+    }
+
+    document.querySelectorAll('.btn-vote-choice').forEach(button => {
+      button.addEventListener('click', () => {
+        selectedVilla = button.dataset.villa;
+        voteChoice.value = selectedVilla;
+        document.querySelectorAll('.btn-vote-choice').forEach(item => {
+          const active = item.dataset.villa === selectedVilla;
+          item.classList.toggle('selected', active);
+          item.textContent = active ? 'Selected ✓' : 'Choose this villa';
+        });
+        document.getElementById('vote').scrollIntoView({ behavior: 'smooth' });
+        voteChoice.focus({ preventScroll: true });
+      });
+    });
+
+    voteForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const name = voteName.value.trim();
+      const villaId = voteChoice.value;
+      if (name.length < 2 || !villaNames[villaId]) {
+        voteMessage.textContent = 'Enter your name and select a villa option before submitting.';
+        return;
+      }
+      voteSubmit.disabled = true;
+      voteSubmit.textContent = 'Submitting…';
+      voteMessage.textContent = '';
+      try {
+        if (canUseSupabase) {
+          const { error } = await pawnaSupabase.rpc('cast_pawna_villa_vote', {
+            p_voter_key: getVoterKey(),
+            p_voter_name: name,
+            p_villa_id: villaId
+          });
+          if (error) throw error;
+          localStorage.setItem(localIdentityStorage, JSON.stringify({ name, villaId }));
+          voteMessage.textContent = `Your vote for ${villaNames[villaId]} has been saved to the shared team poll. You can update it from this browser.`;
+        } else {
+          const votes = readLocalVotes();
+          const existing = votes.findIndex(vote => vote.key === getVoterKey());
+          const record = { key: getVoterKey(), name, villaId };
+          if (existing >= 0) votes[existing] = record; else votes.push(record);
+          localStorage.setItem(localVoteStorage, JSON.stringify(votes));
+          localStorage.setItem(localIdentityStorage, JSON.stringify({ name, villaId }));
+          voteMessage.textContent = `Your preview vote for ${villaNames[villaId]} is saved in this browser only. Configure Supabase to collect everyone’s votes together.`;
+        }
+        await refreshVoteCounts();
+      } catch (error) {
+        console.error('Villa vote failed:', error);
+        voteMessage.textContent = 'The vote could not be saved. Check the connection and voting configuration, then try again.';
+      } finally {
+        voteSubmit.disabled = false;
+        voteSubmit.innerHTML = 'Submit my vote <span class="arrow">↗</span>';
+      }
+    });
+
+    document.getElementById('refreshVotes').addEventListener('click', refreshVoteCounts);
+    refreshVoteCounts();
+  </script>
+</body>
+</html>
